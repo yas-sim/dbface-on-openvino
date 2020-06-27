@@ -59,7 +59,7 @@ python3 ${INTEL_OPENVINO_DIR}/deployment_tools/tools/model_downloader/pytorch_to
 Use `Model Optimizer (MO)` to convert the ONNX model into IR model.
 
 ```sh
-python3 ${INTEL_OPENVINO_DIR}/IntelSWTools/openvino/deployment_tools/model_optimizer/mo.py \
+python3 ${INTEL_OPENVINO_DIR}/deployment_tools/model_optimizer/mo.py \
  --input_model dbface.onnx \
  --mean_values [180,154,150] \
  --scale_values [73.7,70.0,70.9] \
