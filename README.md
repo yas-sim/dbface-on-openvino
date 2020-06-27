@@ -81,8 +81,10 @@ python3 ${INTEL_OPENVINO_DIR}/IntelSWTools/openvino/deployment_tools/model_optim
 
 ```sh
 python3 dbface.py -m model.xml -i input_image
+  or
+python3 dbface-cam.py -m model.xml  (webCam version)
 ```
-`output.jpg` will be ganarated in the current directry.  
+`output.jpg` will be ganarated in the current directry. (non-webCam version only)  
 
 
 ## 6. Test Environment
