@@ -89,7 +89,7 @@ python3 dbface-cam.py -m model.xml  (webCam version)
 
 **Command line example:**
 ```sh
- $ python3 dbface-img.py -m dbface-4vga\dbface.xml -i image.jpg
+ $ python3 dbface-img.py -m dbface-4vga/dbface.xml -i image.jpg
 ```
 
 ## 6. Test Environment
