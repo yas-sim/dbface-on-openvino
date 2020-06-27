@@ -87,6 +87,10 @@ python3 dbface-cam.py -m model.xml  (webCam version)
 ```
 `output.jpg` will be ganarated in the current directry. (non-webCam version only)  
 
+**Command line example:**
+```sh
+ $ python3 dbface-img.py -m dbface-4vga\dbface.xml -i image.jpg
+```
 
 ## 6. Test Environment
 - Ubuntu 18.04 / Windows 10 1909  
