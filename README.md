@@ -30,8 +30,9 @@ pip3 -r <openvino>/deployment_tools/tools/model_downloader/requirements-pytorch.
 ```
 If you fail to install PyTorch, go to PyTorch official web site and follow the `QUICK START LOCALLY` guide to install it. You need to have PyTorch >=1.4.
 
-## 2. Download DBFace PyTorch model
-Download `dbface.pth` from [original developer's GitHub page](https://github.com/dlunion/DBFace/tree/master/model).
+## 2. Download DBFace PyTorch model and weight
+Download `DBFace.py` and `dbface.pth` from [original developer's GitHub page](https://github.com/dlunion/DBFace/tree/master/model).
+
 
 ## 3. Convert PyTorch model into ONNX model
 
@@ -80,7 +81,7 @@ python3 ${INTEL_OPENVINO_DIR}/IntelSWTools/openvino/deployment_tools/model_optim
 ## 5. Run sample program
 
 ```sh
-python3 dbface.py -m model.xml -i input_image
+python3 dbface-img.py -m model.xml -i input_image
   or
 python3 dbface-cam.py -m model.xml  (webCam version)
 ```
