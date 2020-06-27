@@ -3,7 +3,7 @@ The objective of this project is to run the DBFace, a real-time, single-stage fa
 **Original DBFace GitHub site:**
 https://github.com/dlunion/DBFace
 
-Thie original developer used PyTorch to train the model. You need to convert the PyTorch model to OpenVINO IR model. You need to run 2 convertion steps to get the final IR model.  
+Thie original developer used PyTorch to train the model. You need to convert the PyTorch model to OpenVINO IR model. You need to run 2 conversion steps to get the final IR model.  
 ```sh
   PyTorch (.pth) -> ONNX (.onnx) -> IR (.xml, .bin)
 ```
