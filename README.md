@@ -47,7 +47,12 @@ python3 ${INTEL_OPENVINO_DIR}/deployment_tools/tools/model_downloader/pytorch_to
  --output-names sigmoid_hm,tlrb,landmark
 ```
 **Hint:** You can get the input and output node names from the model source code (in this case, `DBFace.py` in the `model` directory)
-
+```Python
+    def forward(self, x):
+        out = self.hs1(self.bn1(self.conv1(x)))
+          :
+        return sigmoid_hm, tlrb, landmark
+```
 ## 4. Convert ONNX model into OpenVINO IR model
 
 Use `Model Optimizer (MO)` to convert the ONNX model into IR model.
@@ -64,6 +69,13 @@ python3 ${INTEL_OPENVINO_DIR}/IntelSWTools/openvino/deployment_tools/model_optim
 
 **Hint:** You can change the input shape with `--input_shape` option.  
 **Hint:** You can find the appropriate parameters (`--mean_values` and `--scale_values`) for input data preprocessing from the original source code (in this case, line 36-40 in `main.py` from the origianl GitHub site)
+```Python
+    mean = [0.408, 0.447, 0.47]
+    std = [0.289, 0.274, 0.278]
+
+    image = common.pad(image)
+    image = ((image / 255.0 - mean) / std).astype(np.float32)
+```
 
 ## 5. Run sample program
 
