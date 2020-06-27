@@ -17,7 +17,7 @@ https://github.com/dlunion/DBFace
   PyTorch (.pth) -> ONNX (.onnx) -> IR (.xml, .bin)
 ```
 
-**Detection result with a 4VGA (1280x960) picture**
+**Detection result with a 4VGA (1280x960) input picture**
 ![output](resources/output.jpg)
 
 ## 1. Prerequisites
