@@ -145,6 +145,16 @@ def main(args):
     print(inshapes, outshapes)
     # 4vga : [[1, 3, 960, 1280]] [[1, 10, 240, 320], [1, 4, 240, 320], [1, 1, 240, 320]]
 
+    # Assign output node idex by checking the number of channels
+    for i,outblob in enumerate(outblobs):
+        C = outshapes[i][1]
+        if C==1:
+            hm_idx=i
+        if C==4:
+            box_idx=i
+        if C==10:
+            lm_idx=i
+
     cap = cv2.VideoCapture(0)
 
     key = -1
@@ -155,9 +165,9 @@ def main(args):
         img = img.transpose((2,0,1))
 
         res = exenet.infer({inblobs[0]:img})
-        lm  = res['Conv_525']    # 1,10,h,w
-        box = res['Exp_527']     # 1,4,h,w
-        hm  = res['Sigmoid_526'] # 1,1,h,w
+        lm  = res[outblobs[lm_idx ]]     # 1,10,h,w
+        box = res[outblobs[box_idx]]     # 1,4,h,w
+        hm  = res[outblobs[hm_idx ]]     # 1,1,h,w
 
         objs = detect(hm=hm, box=box, landmark=lm, threshold=0.2, nms_iou=0.5)
 
