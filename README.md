@@ -81,15 +81,15 @@ python3 ${INTEL_OPENVINO_DIR}/deployment_tools/model_optimizer/mo.py \
 ## 5. Run sample program
 
 ```sh
-python3 dbface-img.py -m model.xml -i input_image
-  or
-python3 dbface-cam.py -m model.xml  (webCam version)
+python3 dbface-infer.py -m model.xml -i input_image
 ```
+A webCam #0 will be used when you specify 'cam' as the input file name.
 `output.jpg` will be ganarated in the current directry. (non-webCam version only)  
 
 **Command line example:**
 ```sh
- $ python3 dbface-img.py -m dbface-4vga/dbface.xml -i image.jpg
+ $ python3 dbface-infer.py -m dbface-4vga/dbface.xml -i image.jpg
+ $ python3 dbface-infer.py -m dbface-vga/dbface.xml -i cam
 ```
 
 ## 6. Test Environment
