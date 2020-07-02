@@ -25,8 +25,8 @@ https://github.com/dlunion/DBFace
 * Model Downloader / Model Converter setup  
   [Model Downloader guide](https://docs.openvinotoolkit.org/latest/_tools_downloader_README.html)
 ```sh
-pip3 -r <openvino>/deployment_tools/tools/model_downloader/requirements.in
-pip3 -r <openvino>/deployment_tools/tools/model_downloader/requirements-pytorch.in
+pip3 -r ${INTEL_OPENVINO_DIR}/deployment_tools/tools/model_downloader/requirements.in
+pip3 -r ${INTEL_OPENVINO_DIR}/deployment_tools/tools/model_downloader/requirements-pytorch.in
 ```
 If you fail to install PyTorch, go to PyTorch official web site and follow the `QUICK START LOCALLY` guide to install it. You need to have PyTorch >=1.4.
 
