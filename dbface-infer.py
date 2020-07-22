@@ -190,7 +190,7 @@ def main(args):
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
-    parser.add_argument('-i', '--input', type=str, default='selfie.jpg', help='input image file name (\'cam\' for webCam input)'
+    parser.add_argument('-i', '--input', type=str, default='selfie.jpg', help='input image file name (\'cam\' for webCam input)')
     parser.add_argument('-m', '--model', type=str, default='./dbface.xml', help='FBFace IR model file name (*.xml)')
     args = parser.parse_args()
 
